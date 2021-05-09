@@ -70,9 +70,26 @@ $(function() {
 <p><a href="#contributors-"><img src="https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square" alt="All Contributors" style="pointer-events: none;" class="inline"/></a></p>
 <h1>Tank Controller Library</h1>
 <p>Arduino library for the Open Acidification pH Stat Controller</p>
-<h2>Installation</h2>
-<p>Use <a href="scripts/install.sh"><code>scripts/install.sh</code></a> to do the initial install. To build the GUI simulator, see <a href="GUI/build.sh">GUI/build.sh</a>.</p>
-<h2>Contributors ✨</h2>
+<h2>Use</h2>
+<h3>Development</h3>
+<ul>
+<li>Clone (or fork and clone if you might contribute to the project) this repository to the <a href="https://www.arduino.cc/en/Hacking/Libraries">Arduino Libraries directory</a>.</li>
+<li>Use <a href="scripts/install.sh"><code>scripts/install.sh</code></a> to do the initial install.</li>
+<li>After that use <a href="scripts/testAndBuild.sh"><code>scripts/testAndBuild.sh</code></a> to test.</li>
+<li>To build the GUI simulator, see <a href="GUI/build.sh">GUI/build.sh</a>.</li>
+</ul>
+<h3>Install</h3>
+<p>To install onto an Arduino Mega2560 use the <a href="https://www.arduino.cc/en/software">Arduino IDE</a>.</p>
+<p>By default, the Arduino compiler links to a <code>printf</code> library that does not support printing floating point numbers. To get that feature (which we use!), add the following lines to <code>boards.txt</code> and use the Tools menu to select "`RV printf Version: "Full printf"&lt;tt&gt;. On macOS, the&lt;/tt&gt;boards.txt&lt;tt&gt;is located at&lt;/tt&gt;~/Library/Arduino15/packages/arduino/hardware/avr/1.8.3`. For background see &lt;a href="<a href="https://forum.arduino.cc/t/no-sprintf-float-formatting-come-back-five-year/331790/6">https://forum.arduino.cc/t/no-sprintf-float-formatting-come-back-five-year/331790/6</a>"&gt;here.</p>
+<div class="fragment"><div class="line">menu.printf=AVR printf Version</div>
+<div class="line"> </div>
+<div class="line">mega.menu.printf.default=Default printf</div>
+<div class="line">mega.menu.printf.default.compiler.c.elf.extra_flags=</div>
+<div class="line">mega.menu.printf.full=Full printf</div>
+<div class="line">mega.menu.printf.full.compiler.c.elf.extra_flags=-Wl,-u,vfprintf -lprintf_flt</div>
+<div class="line">mega.menu.printf.minimal=Minimal printf</div>
+<div class="line">mega.menu.printf.minimal.compiler.c.elf.extra_flags=-Wl,-u,vfprintf -lprintf_min</div>
+</div><!-- fragment --><h2>Contributors ✨</h2>
 <p>Thanks goes to these wonderful people (<a href="https://allcontributors.org/docs/en/emoji-key">emoji key</a>):</p>
 <table class="doxtable">
 <tr>
